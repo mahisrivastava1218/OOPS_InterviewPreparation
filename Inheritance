@@ -1,0 +1,37 @@
+--  Class inheritance is a way for one class to extend another class. So we can create new functionality on top of the existing.
+
+--  We can use the extends keyword while defining a Child class that inherits from Parent. can you give example
+
+// Parent class
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  speak() {
+    console.log(`${this.name} makes a sound.`);
+  }
+}
+
+// Child class that inherits from Animal
+class Dog extends Animal {
+  constructor(name, breed) {
+    super(name); // Call the constructor of the parent class
+    this.breed = breed;
+  }
+
+  speak() {
+    console.log(`${this.name} barks. It's a ${this.breed}.`);
+  }
+}
+
+// Create instance
+const myDog = new Dog("Buddy", "Labrador");
+
+myDog.speak(); // Output: Buddy barks. It's a Labrador.
+
+extends: Used to inherit from the parent class.
+
+super(): Calls the constructor of the parent class.
+
+Method overriding: Dog overrides the speak method of Animal
