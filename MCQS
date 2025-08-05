@@ -1,0 +1,18 @@
+Which of the following Object methods can we use to access all the values of an object `obj`?
+Object.values(obj)
+`Object.values(obj)` - Returns an array containing the values of the object `obj`
+
+How can we perform inheritance in JavaScript?
+--  Class inheritance is a way for one class to extend another class. So we can create new functionality on top of the existing.
+--  We can use the `extends` keyword while defining a Child class that inherits from Parent.
+
+
+
+g
+
+
+
+
+
+
+
