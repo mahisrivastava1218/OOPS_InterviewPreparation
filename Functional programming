@@ -1,0 +1,30 @@
+In functional programming, solutions are implemented as self-contained functions that only affect their input and produce an output, without any side effects that extend beyond the function's scope. This can be summarized as
+INPUT -> PROCESS -> OUTPUT.
+
+Functional programming emphasizes on:
+
+Functions with minimal side effects, whereby any modifications to the program's state beyond the function are precisely managed.
+
+Self-contained functions that don't rely on the program's state, including global variables that can be altered.
+
+Pure functions that consistently produce the same output when given the same input.
+
+const getTea = (typeOfTea, numberOfCups) => {
+
+  const tea_cups = [];
+
+  for (let cups = 1; cups <= numberOfCups; cups += 1) {
+    const tea_cup = prepareTea(typeOfTea);
+    tea_cups.push(tea_cup);
+  }
+  return tea_cups;
+};
+
+const prepareTea = (typeOfTea) => {
+  return typeOfTea;
+}
+
+const tea = (typeOfTea, numberOfCups) => {
+  // You need to implement this function.
+ return getTea(typeOfTea, numberOfCups);
+}
