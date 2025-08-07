@@ -7,6 +7,33 @@ How can we perform inheritance in JavaScript?
 --  We can use the `extends` keyword while defining a Child class that inherits from Parent.
 
 
+The ________ operator is used to create an instance of an object.
+new
+
+Which keyword is used to inherit a class?
+extends
+
+What we are doing if we give it the same name and parameters as the method in the superclass?
+Method overriding is a process where we give it the same name and parameters as the method in the superclass.
+
+Which keyword is used to call the constructor of its parent class to access the parent's properties and methods?
+super
+
+The syntax for adding a property to an object is?
+objectName.property = propertyValue;
+
+What is a special method of a class or structure in object-oriented programming that initializes a newly created object of that type?
+constructor
+
+Functional programming is of what nature?
+Declarative(Functional programming is declarative (What needs to be done) rather 
+than imperative (how it needs to be done, for example: OOPS), and the state flows through pure functions.)
+
+A function that returns the same output, when provided the same input is known as a?
+Pure function
+
+In order to use the import and export functionality, the javascript file must be defined as?
+modules
 
 
 
