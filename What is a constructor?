@@ -1,0 +1,33 @@
+A constructor is a special function (or method) that is used to initialize objects when they are created.
+Its main job is to set up the initial values (properties) of the object.
+In ES5 (before classes), we used constructor functions.
+In ES6 and later, we use the constructor method inside a class.
+Called automatically when a new object is created with new.
+Usually used to set initial properties of the object.
+
+
+Example in ES6 class
+class Car {
+  constructor(brand, color) {  // constructor method
+    this.brand = brand;
+    this.color = color;
+  }
+
+  displayInfo() {
+    console.log(`${this.color} ${this.brand}`);
+  }
+}
+
+const car1 = new Car("Toyota", "Red"); // constructor runs here
+car1.displayInfo(); // Red Toyota
+
+Example in Constructor Function (ES5 style)
+function Car(brand, color) {
+  this.brand = brand;
+  this.color = color;
+}
+
+const car1 = new Car("BMW", "Black"); // constructor runs here
+console.log(car1.brand); // BMW
+
+A constructor is like the setup worker — whenever you create a new object, the constructor is called to give that object its starting values.
