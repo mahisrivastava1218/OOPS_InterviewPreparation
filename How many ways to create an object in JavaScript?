@@ -1,0 +1,53 @@
+1️⃣ Using Object Literal (Most common)
+Simplest and most readable.
+const obj = {
+  name: "Mahi",
+  age: 25
+};
+
+2️⃣ Using new Object()
+Uses the built-in Object constructor.
+const obj = new Object();
+obj.name = "Mahi";
+obj.age = 25;
+
+
+3️⃣ Using Constructor Function
+A custom function that acts like a blueprint.
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+const p1 = new Person("Mahi", 25);
+
+
+4️⃣ Using ES6 class
+A cleaner syntax for constructor functions
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+}
+const p2 = new Person("Mahi", 25);
+
+
+5️⃣ Using Object.create()
+Creates an object with a specific prototype.
+const proto = {
+  greet() {
+    console.log(`Hello, ${this.name}`);
+  }
+};
+
+const obj = Object.create(proto);
+obj.name = "Mahi";
+obj.greet(); // Hello, Mahi
+
+Method	        Example	         Use case
+Object literal	{}	            Quick object creation
+new Object()	new Object()	   Rarely used, similar to {}
+Constructor function	new Func()	ES5 way to define reusable objects
+class	new Class()	Modern & clean reusable blueprint
+Object.create()	Object.create(proto)	When you want to set a prototype manually
+
