@@ -1,0 +1,39 @@
+1️⃣ call()
+Calls the function immediately.
+First argument → value for this.
+Remaining arguments → passed individually.
+function greet(city, country) {
+  console.log(`Hello, my name is ${this.name} from ${city}, ${country}`);
+}
+
+const person = { name: "Mahi" };
+
+greet.call(person, "Delhi", "India");
+// Hello, my name is Mahi from Delhi, India
+
+
+2️⃣ apply()
+Same as call(), but arguments are passed as an array.
+Useful when you already have arguments in an array form.
+
+greet.apply(person, ["Mumbai", "India"]);
+// Hello, my name is Mahi from Mumbai, India
+
+
+
+3️⃣ bind()
+Does not call the function immediately.
+Returns a new function with this permanently set.
+You can call that function later.
+const boundGreet = greet.bind(person, "Pune", "India");
+boundGreet(); 
+// Hello, my name is Mahi from Pune, India
+Method	Calls Immediately?	Arguments Passing	Returns?
+call	✅ Yes	Individually separated	undefined (function runs)
+apply	✅ Yes	As an array	undefined (function runs)
+bind	❌ No	Individually separated	New function with this bound
+
+
+call → Call now, pass args list.
+apply → Call now, pass args as array.
+bind → Bind later, pass args list.
