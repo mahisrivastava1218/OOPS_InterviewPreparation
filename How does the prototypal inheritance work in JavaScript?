@@ -1,0 +1,87 @@
+1️⃣ What it is
+In JavaScript, objects can inherit properties and methods from other objects.
+This is done through a special hidden property called [[Prototype]] (accessible in code via __proto__ or Object.getPrototypeOf()).
+When you try to access a property on an object:
+JavaScript first looks on the object itself.
+If it’s not found, it goes up the prototype chain to its parent (the prototype object).
+This continues until:
+The property is found, OR
+It reaches the end of the chain (null).
+
+2️⃣ Simple Example
+const parent = {
+  greet() {
+    console.log("Hello from parent");
+  }
+};
+
+const child = Object.create(parent); // child’s prototype = parent
+child.sayBye = function() {
+  console.log("Bye from child");
+};
+
+child.greet(); // ✅ Found in parent via prototype chain
+child.sayBye(); // ✅ Found in child itself
+Here:
+
+child doesn’t have greet() directly.
+
+JS looks at child.__proto__ → finds it in parent.
+
+3️⃣ Prototypes with Constructor Functions
+When you create objects with a constructor function or class, they automatically link to a prototype object.
+
+function Person(name) {
+  this.name = name;
+}
+
+Person.prototype.sayHello = function() {
+  console.log(`Hello, I’m ${this.name}`);
+};
+
+const p1 = new Person("Mahi");
+p1.sayHello(); // Hello, I’m Mahi
+Here:
+
+p1.__proto__ → Person.prototype
+
+This is why p1 can use sayHello() even though it’s not on p1 itself.
+
+4️⃣ Prototype Chain Visualization
+p1 → Person.prototype → Object.prototype → null
+p1: Has its own properties like name.
+
+Person.prototype: Has methods like sayHello.
+
+Object.prototype: Has methods like toString.
+
+null: End of the chain.
+
+5️⃣ With ES6 Classes
+Classes in JavaScript are just syntactic sugar over prototype-based inheritance.
+
+class Animal {
+  speak() {
+    console.log("Animal sound");
+  }
+}
+
+class Dog extends Animal {
+  bark() {
+    console.log("Woof!");
+  }
+}
+
+const d = new Dog();
+d.speak(); // From Animal
+d.bark();  // From Dog
+Here:
+
+d.__proto__ → Dog.prototype
+
+Dog.prototype.__proto__ → Animal.prototype
+
+Animal.prototype.__proto__ → Object.prototype
+
+Prototypal inheritance is like a chain of fallback lookups —
+If a property isn’t on the object, JavaScript automatically checks its prototype, then that prototype’s prototype, and so on.
